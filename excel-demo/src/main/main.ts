@@ -187,7 +187,10 @@ ipcMain.on(
           cwd,
           abortController,
           maxTurns: 100,
-          settingSources: ['local', 'project'],
+
+          // Enable user-level settings
+          settingSources: ['user', 'local'],
+
           allowedTools: [
             'Bash',
             'Create',

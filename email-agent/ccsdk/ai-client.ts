@@ -22,7 +22,11 @@ export class AIClient {
     this.defaultOptions = {
       maxTurns: 100,
       cwd: path.join(process.cwd(), 'agent'),
-      model: "opus",
+      model: "sonnet",
+
+      // Enable user-level settings
+      settingSources: ['user', 'local'],
+
       allowedTools: [
         "Task", "Bash", "Glob", "Grep", "LS", "ExitPlanMode", "Read", "Edit", "MultiEdit", "Write", "NotebookEdit",
         "WebFetch", "TodoWrite", "WebSearch", "BashOutput", "KillBash", "mcp__email__search_inbox", "mcp__email__read_emails"
