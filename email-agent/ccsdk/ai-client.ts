@@ -9,6 +9,7 @@ export interface AIQueryOptions {
   maxTurns?: number;
   cwd?: string;
   model?: string;
+  settingSources?: string[];
   allowedTools?: string[];
   appendSystemPrompt?: string;
   mcpServers?: any;

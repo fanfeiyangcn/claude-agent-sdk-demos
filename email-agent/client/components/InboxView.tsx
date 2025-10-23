@@ -146,7 +146,6 @@ export function InboxView({ emails, onEmailSelect, selectedEmailId }: InboxViewP
                 </div>
               ))
             )}
-          </div>
         </div>
       </div>
 
