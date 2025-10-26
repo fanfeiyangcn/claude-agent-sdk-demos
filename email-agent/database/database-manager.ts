@@ -215,16 +215,14 @@ export class DatabaseManager {
       INSERT INTO emails (
         message_id, thread_id, in_reply_to, email_references,
         date_sent, date_received, subject, from_address, from_name,
-        to_addresses, cc_addresses, bcc_addresses, reply_to,
-        body_text, body_html, snippet,
+        reply_to, body_text, body_html, snippet,
         is_read, is_starred, is_important, is_draft, is_sent,
         is_trash, is_spam, size_bytes, has_attachments,
         attachment_count, folder, labels, raw_headers
       ) VALUES (
         $messageId, $threadId, $inReplyTo, $references,
         $dateSent, $dateReceived, $subject, $fromAddress, $fromName,
-        $toAddresses, $ccAddresses, $bccAddresses, $replyTo,
-        $bodyText, $bodyHtml, $snippet,
+        $replyTo, $bodyText, $bodyHtml, $snippet,
         $isRead, $isStarred, $isImportant, $isDraft, $isSent,
         $isTrash, $isSpam, $sizeBytes, $hasAttachments,
         $attachmentCount, $folder, $labels, $rawHeaders
@@ -238,9 +236,6 @@ export class DatabaseManager {
         subject = excluded.subject,
         from_address = excluded.from_address,
         from_name = excluded.from_name,
-        to_addresses = excluded.to_addresses,
-        cc_addresses = excluded.cc_addresses,
-        bcc_addresses = excluded.bcc_addresses,
         reply_to = excluded.reply_to,
         body_text = excluded.body_text,
         body_html = excluded.body_html,
@@ -288,9 +283,6 @@ export class DatabaseManager {
         $subject: email.subject || null,
         $fromAddress: email.fromAddress,
         $fromName: email.fromName || null,
-        $toAddresses: email.toAddresses || null,
-        $ccAddresses: email.ccAddresses || null,
-        $bccAddresses: email.bccAddresses || null,
         $replyTo: email.replyTo || null,
         $bodyText: email.bodyText || null,
         $bodyHtml: email.bodyHtml || null,
